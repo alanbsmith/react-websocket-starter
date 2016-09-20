@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 
 let socket = io.connect();
 
-const Hello = React.createClass({
+const App = React.createClass({
   componentDidMount() {
     socket.on('connect', function(data) {
       socket.emit('join', 'hello world from the client!');
@@ -11,10 +11,10 @@ const Hello = React.createClass({
   },
 
   render() {
-    return(
+    return (
       <h1>Hello, {this.props.name}!</h1>
     )
   }
 });
 
-export default Hello;
+export default App;
